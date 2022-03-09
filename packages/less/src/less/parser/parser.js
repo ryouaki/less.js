@@ -1643,7 +1643,10 @@ const Parser = function Parser(context, imports, fileInfo) {
                 }
                 parserInput.save();
 
-                value = parserInput.$parseUntil(tok);
+                // css variable without end semicolon get a compiler error #3698
+                // const untilRet = parserInput.$parseUntil(tok) || parserInput.$parseUntil('\n') || parserInput.$parseUntil('}')
+                // value = untilRet || value
+                value = parserInput.$parseUntil(tok)
 
                 if (value) {
                     if (typeof value === 'string') {

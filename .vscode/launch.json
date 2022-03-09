@@ -15,6 +15,13 @@
     {
       "type": "node",
       "request": "launch",
+      "name": "Less done",
+      "program": "${workspaceFolder}/index.js",
+      "console": "integratedTerminal"
+    },
+    {
+      "type": "node",
+      "request": "launch",
       "name": "Benchmark test",
       "program": "${workspaceFolder}/packages/less/benchmark/index.js",
       "cwd": "${workspaceFolder}/packages/less",
